@@ -1,0 +1,18 @@
+logging:
+  level:
+    root: INFO
+    app:
+      management: DEBUG
+spring:
+  datasource:
+    url: jdbc:postgresql://ec2-3-224-8-189.compute-1.amazonaws.com:5432/dcni9mt4a5p4n9
+    username: tsrwsymzdbjtzo
+    password: fed36db87dbb4f0ac8d0e92fc0afa388be85b6d08a01d02e0ed6a73d6bf1b638
+    driverClassName: org.postgresql.Driver
+    flyway:
+      locations: "classpath:db/migration"
+
+flyway:
+    validate-on-migrate: false
+    encoding: UTF8MB4
+    out-of-order: true
