@@ -5,12 +5,15 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 import static app.chatbot.service.management.util.DatabaseConstant.*;
 
 @Entity
-@Builder
 @Table(name = T_CATEGORY)
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,13 +26,11 @@ public class CategoryEntity {
     @Column(name = A_CATEGORY_ID)
     private String categoryId;
 
-    @NotNull(message = "Must not be null")
     @Column(name = A_CATEGORY_NAME)
     private String categoryName;
 
-    @JsonIgnore
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "category", cascade = CascadeType.ALL)
-    private Set<QuestionAnswer> question_answer;
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    private Set<AnswerEntity> answers;
 
     @Override
     public String toString() {

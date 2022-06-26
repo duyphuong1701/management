@@ -18,6 +18,10 @@ repositories {
 	mavenCentral()
 }
 
+ext {
+	mapstructVersion = "1.5.2.Final"
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -28,6 +32,9 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	//	flyway data
 	implementation 'org.flywaydb:flyway-core'
+	// mapstruct
+	implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+	annotationProcessor "org.mapstruct:mapstruct-processor:1.5.2.Final"
 }
 
 // Add these START

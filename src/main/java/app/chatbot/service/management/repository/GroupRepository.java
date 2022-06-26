@@ -1,11 +1,9 @@
 package app.chatbot.service.management.repository;
 
-import app.chatbot.service.management.entity.CategoryEntity;
+import app.chatbot.service.management.entity.GroupEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.UUID;
-
 @Repository
-public interface CategoryRepository extends JpaRepository<CategoryEntity, String> {
+public interface GroupRepository extends JpaRepository<GroupEntity,String> {
 }
