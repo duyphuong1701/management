@@ -17,7 +17,7 @@ public class DatabaseConstant {
     public static final String A_ANSWER_CONTENT = "answer_content";
 
     public static final String T_MODEL_SELECTION = "tb_model_selection";
-    public static final String A_MODLE_ID = "model_id";
+    public static final String A_MODEL_ID = "model_id";
 
     public static final String T_MODEL = "tb_model";
     public static final String A_MODEL_NAME = "name";

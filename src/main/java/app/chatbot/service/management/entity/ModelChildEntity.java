@@ -25,6 +25,6 @@ public class ModelChildEntity {
     @Column(name = A_MODEL_CHILD_ID)
     private UUID modelChildId;
 
-    @Column(name = A_MODLE_ID)
+    @Column(name = A_MODEL_ID)
     private UUID modelId;
 }

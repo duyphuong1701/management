@@ -22,7 +22,7 @@ import static app.chatbot.service.management.util.DatabaseConstant.*;
 public class ModelEntity {
 
     @Id
-    @Column(name = A_MODLE_ID)
+    @Column(name = A_MODEL_ID)
     private UUID modelId;
 
     @Column(name = A_MODEL_NAME)

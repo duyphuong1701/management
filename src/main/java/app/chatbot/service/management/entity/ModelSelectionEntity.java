@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 
 import java.util.UUID;
 
-import static app.chatbot.service.management.util.DatabaseConstant.A_MODLE_ID;
+import static app.chatbot.service.management.util.DatabaseConstant.A_MODEL_ID;
 import static app.chatbot.service.management.util.DatabaseConstant.T_MODEL_SELECTION;
 
 @Entity
@@ -23,7 +23,7 @@ import static app.chatbot.service.management.util.DatabaseConstant.T_MODEL_SELEC
 @Setter
 public class ModelSelectionEntity {
     @Id
-    @Column(name = A_MODLE_ID )
+    @Column(name = A_MODEL_ID)
     @NotNull(message = "must not be null")
     private UUID modelId;
 }
