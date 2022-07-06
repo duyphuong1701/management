@@ -33,7 +33,7 @@ public class ModelService {
     public void update(UUID id, ModelDTO modelDTO) {
         var entity = repository.findById(id);
         if (entity.isPresent()) {
-            var new_entity = ObjectMapper.MAP.converter(modelDTO);
+            var new_entity = ObjectMapper.MAP.toEntity(modelDTO);
             new_entity.setModelId(id);
             repository.save(new_entity);
         }
@@ -41,7 +41,8 @@ public class ModelService {
     }
 
     public void save(ModelDTO t) {
-
+        var entity = ObjectMapper.MAP.toEntity(t);
+        this.repository.save(entity);
     }
 
     public void remove(UUID id) {

@@ -23,7 +23,7 @@ public abstract class ObjectMapper {
 
     public abstract ModelDTO converter(ModelEntity source);
 
-    public abstract ModelEntity converter(ModelDTO source);
+    public abstract ModelEntity toEntity(ModelDTO source);
 
     public abstract BaseModelDTO converterBase(ModelEntity source);
 
