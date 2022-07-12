@@ -7,17 +7,27 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.UUID;
+
 import static app.chatbot.service.management.util.DatabaseConstant.*;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ModelDTO extends BaseModelDTO {
+public class ModelDTO{
+    @JsonProperty(A_MODEL_ID)
+    private UUID modelId;
+
+    @JsonProperty(A_MODEL_NAME)
+    private String name;
+
+    @JsonProperty(A_MODEL_SCORE)
+    private String score;
+
+    @JsonProperty(A_MODEL_C)
+    private String c;
+
     @JsonProperty(A_MODEL_DATA)
     private String data;
-    @JsonProperty(A_MODEL_FEATURE)
-    private String feature;
-    @JsonProperty(A_MODEL_WB)
-    private String wb;
 }

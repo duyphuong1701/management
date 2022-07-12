@@ -1,6 +1,5 @@
 package app.chatbot.service.management.service;
 
-import app.chatbot.service.management.dto.BaseModelDTO;
 import app.chatbot.service.management.dto.ModelDTO;
 import app.chatbot.service.management.entity.ModelEntity;
 import app.chatbot.service.management.repository.ModelRepository;
@@ -8,6 +7,7 @@ import app.chatbot.service.management.util.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -26,9 +26,6 @@ public class ModelService {
         return repository.findById(id);
     }
 
-    public List<BaseModelDTO> findAllBase() {
-        return repository.findAll().stream().map(e -> ObjectMapper.MAP.converterBase(e)).collect(Collectors.toList());
-    }
 
     public void update(UUID id, ModelDTO modelDTO) {
         var entity = repository.findById(id);
@@ -37,7 +34,7 @@ public class ModelService {
             new_entity.setModelId(id);
             repository.save(new_entity);
         }
-        throw new RuntimeException("not found AnswerEntity to update");
+        throw new RuntimeException("not found ModelEntity to update");
     }
 
     public void save(ModelDTO t) {
@@ -47,5 +44,8 @@ public class ModelService {
 
     public void remove(UUID id) {
         repository.deleteById(id);
+    }
+    public List<ModelEntity> findAllBase(){
+        return this.repository.findAllBase();
     }
 }

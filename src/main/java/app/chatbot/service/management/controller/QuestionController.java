@@ -1,7 +1,6 @@
 package app.chatbot.service.management.controller;
 
 import app.chatbot.service.management.dto.QuestionDTO;
-import app.chatbot.service.management.entity.QuestionEntity;
 import app.chatbot.service.management.service.QuestionService;
 import app.chatbot.service.management.util.ObjectMapper;
 import io.swagger.v3.oas.annotations.Operation;
@@ -15,6 +14,7 @@ import java.util.UUID;
 
 
 @RestController
+@CrossOrigin(maxAge = 3600)
 @RequestMapping("/questions")
 public class QuestionController {
 

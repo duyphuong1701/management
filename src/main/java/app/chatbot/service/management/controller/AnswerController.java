@@ -14,6 +14,7 @@ import java.util.UUID;
 
 
 @RestController
+@CrossOrigin(maxAge = 3600)
 @RequestMapping("/answers")
 public class AnswerController {
 

@@ -116,6 +116,6 @@ insert into tb_group(group_id) values('G004');
 insert into tb_group(group_id) values('G006');
 insert into tb_group(group_id) values('G007');
 insert into tb_group(group_id) values('G008');
-insert into tb_group(group_id) values('G009');
+insert into tb_group(group_id) values('G005');
 
 

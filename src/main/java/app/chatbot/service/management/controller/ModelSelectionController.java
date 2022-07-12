@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
+@CrossOrigin(maxAge = 3600)
 @RequestMapping("/selection")
 public class ModelSelectionController {
 

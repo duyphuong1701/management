@@ -1,17 +1,12 @@
 package app.chatbot.service.management.util;
 
 import app.chatbot.service.management.dto.*;
-import app.chatbot.service.management.entity.AnswerEntity;
-import app.chatbot.service.management.entity.CategoryEntity;
-import app.chatbot.service.management.entity.ModelEntity;
-import app.chatbot.service.management.entity.QuestionEntity;
+import app.chatbot.service.management.entity.*;
 import app.chatbot.service.management.repository.CategoryRepository;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import javax.persistence.EntityNotFoundException;
 
 @Mapper(componentModel = "spring")
 public abstract class ObjectMapper {
@@ -24,8 +19,6 @@ public abstract class ObjectMapper {
     public abstract ModelDTO converter(ModelEntity source);
 
     public abstract ModelEntity toEntity(ModelDTO source);
-
-    public abstract BaseModelDTO converterBase(ModelEntity source);
 
     @Mapping(target = "answerId", ignore = true)
     @Mapping(target = "category", ignore = true)
@@ -46,5 +39,9 @@ public abstract class ObjectMapper {
     public abstract CategoryEntity toEntity(CategoryDTO source);
     public abstract CategoryDTO toDTO(CategoryEntity source);
 
+    public abstract GroupEntity toEntity(GroupDTO source);
+    public abstract GroupDTO toDTO(GroupEntity source);
+
+    public abstract ModelBaseDTO toBaseDTO(ModelEntity source);
 
 }

@@ -1,3 +1,4 @@
+
 logging:
   level:
     root: INFO
@@ -5,6 +6,10 @@ logging:
       management: DEBUG
 spring:
   datasource:
+#    url: jdbc:postgresql://localhost:5433/chatbot_db
+#    username: chatbot_db
+#    password: root
+#    driverClassName: org.postgresql.Driver
     url: jdbc:postgresql://ec2-3-224-8-189.compute-1.amazonaws.com:5432/d4beur7tqefhvp
     username: rpkxxlrrnzupzm
     password: a0e26be17fd6203a4acb8e90df8915561efc245ac71d5a7f623ce2f68ee46d27
@@ -17,10 +22,14 @@ spring:
 
   flyway:
     locations: "classpath:db/migration"
-    enabled: false
+    enabled: true
 
 
 flyway:
     validate-on-migrate: false
     encoding: UTF8MB4
     out-of-order: true
+chatbot-ml:
+  host: http://localhost:8765
+server:
+  port: 8088
