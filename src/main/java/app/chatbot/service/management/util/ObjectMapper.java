@@ -36,9 +36,12 @@ public abstract class ObjectMapper {
     @Mapping(target = "groupId", source = "group.groupId")
     public abstract QuestionDTO toDTO(QuestionEntity source);
 
+    @Mapping( target = "answers", ignore = true)
     public abstract CategoryEntity toEntity(CategoryDTO source);
+
     public abstract CategoryDTO toDTO(CategoryEntity source);
 
+    @Mapping( target = "questions", ignore = true)
     public abstract GroupEntity toEntity(GroupDTO source);
     public abstract GroupDTO toDTO(GroupEntity source);
 

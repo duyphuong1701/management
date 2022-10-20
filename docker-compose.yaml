@@ -1,0 +1,33 @@
+version: '3'
+
+networks:
+  chatbot_network:
+    driver: bridge
+services:
+  web:
+    container_name: chatbot_management
+    build: .
+    image: chatbot-management
+    ports:
+      - 8088:8088
+    networks:
+      - chatbot_network
+    depends_on:
+      - db
+  db:
+    container_name: db
+    image: postgres:13
+    restart: always
+    environment:
+      - POSTGRES_DB=chatbot_db
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+    ports:
+      - "5432:5432"
+    networks:
+      - chatbot_network
+    volumes:
+      - db:/var/lib/postgresql/data
+volumes:
+  db:
+    driver: local
